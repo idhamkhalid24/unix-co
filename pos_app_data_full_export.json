@@ -1,0 +1,2598 @@
+{
+  "products": [
+    {
+      "id": "AENER-BF",
+      "name": "AENER-BF",
+      "price": 108000,
+      "cost": 86000,
+      "stock": 2
+    },
+    {
+      "id": "LY-BASIC-JUMBO",
+      "name": "LY-BASIC-JUMBO",
+      "price": 114000,
+      "cost": 81000,
+      "stock": 0
+    },
+    {
+      "id": "LY-HW-JUMBO",
+      "name": "LY-HW-JUMBO",
+      "price": 102000,
+      "cost": 86000,
+      "stock": 3
+    },
+    {
+      "id": "M-917",
+      "name": "M-917",
+      "price": 160000,
+      "cost": 133000,
+      "stock": 4
+    },
+    {
+      "id": "CB-LY-JEANS",
+      "name": "CB-LY-JEANS",
+      "price": 114000,
+      "cost": 95000,
+      "stock": 13
+    },
+    {
+      "id": "LY-HW-JEANS",
+      "name": "LY-HW-JEANS",
+      "price": 96000,
+      "cost": 75000,
+      "stock": 12
+    },
+    {
+      "id": "505-JEANS",
+      "name": "505-JEANS",
+      "price": 100000,
+      "cost": 80000,
+      "stock": 12
+    },
+    {
+      "id": "B-LOSSE-JEANS",
+      "name": "B-LOSSE-JEANS",
+      "price": 100000,
+      "cost": 80000,
+      "stock": 3
+    },
+    {
+      "id": "ZST-CUTBRAY",
+      "name": "ZST-CUTBRAY",
+      "price": 120000,
+      "cost": 100000,
+      "stock": 3
+    },
+    {
+      "id": "CB-KNIT-IMPOR",
+      "name": "CB-KNIT-IMPOR",
+      "price": 86000,
+      "cost": 71000,
+      "stock": 2
+    },
+    {
+      "id": "KNIT-IMPOR",
+      "name": "KNIT-IMPOR",
+      "price": 84000,
+      "cost": 68000,
+      "stock": 3
+    },
+    {
+      "id": "LY-CARGO-JEANS",
+      "name": "LY-CARGO-JEANS",
+      "price": 108000,
+      "cost": 92000,
+      "stock": 0
+    },
+    {
+      "id": "SKENA-JEANS",
+      "name": "SKENA-JEANS",
+      "price": 114000,
+      "cost": 95000,
+      "stock": 3
+    },
+    {
+      "id": "LG-CROP-JEANS",
+      "name": "LG-CROP-JEANS",
+      "price": 72000,
+      "cost": 50000,
+      "stock": 2
+    },
+    {
+      "id": "RAJUT",
+      "name": "RAJUT",
+      "price": 84000,
+      "cost": 67000,
+      "stock": 1
+    },
+    {
+      "id": "8186",
+      "name": "8186",
+      "price": 128000,
+      "cost": 108000,
+      "stock": 0
+    },
+    {
+      "id": "AR-KEMEJA-POLOS",
+      "name": "AR-KEMEJA-POLOS",
+      "price": 42000,
+      "cost": 35000,
+      "stock": 3
+    },
+    {
+      "id": "KNITH-RIB",
+      "name": "KNITH-RIB",
+      "price": 40000,
+      "cost": 32000,
+      "stock": 3
+    },
+    {
+      "id": "UT-KEMEJA",
+      "name": "UT-KEMEJA",
+      "price": 60000,
+      "cost": 50000,
+      "stock": 10
+    },
+    {
+      "id": "IC-KEMEJA",
+      "name": "IC-KEMEJA",
+      "price": 89000,
+      "cost": 73000,
+      "stock": 2
+    },
+    {
+      "id": "AR-KEMEJA",
+      "name": "AR-KEMEJA",
+      "price": 50000,
+      "cost": 42000,
+      "stock": 9
+    },
+    {
+      "id": "M-113147",
+      "name": "M-113147",
+      "price": 144000,
+      "cost": 122000,
+      "stock": 1
+    },
+    {
+      "id": "IMPORT-2727",
+      "name": "IMPORT-2727",
+      "price": 116000,
+      "cost": 95000,
+      "stock": 2
+    },
+    {
+      "id": "IMPORT-205",
+      "name": "IMPORT-205",
+      "price": 128000,
+      "cost": 105000,
+      "stock": 0
+    },
+    {
+      "id": "LY-BASIC-JEANS",
+      "name": "LY-BASIC-JEANS",
+      "price": 108000,
+      "cost": 95000,
+      "stock": 9
+    },
+    {
+      "id": "HARA-KEMEJA",
+      "name": "HARA-KEMEJA",
+      "price": 63000,
+      "cost": 52000,
+      "stock": 1
+    },
+    {
+      "id": "KEMEJA-BORDIR",
+      "name": "KEMEJA-BORDIR",
+      "price": 85000,
+      "cost": 72000,
+      "stock": 3
+    },
+    {
+      "id": "RAJUT-PREMIUM",
+      "name": "RAJUT-PREMIUM",
+      "price": 96000,
+      "cost": 80000,
+      "stock": 1
+    },
+    {
+      "id": "RAJUT-XLT",
+      "name": "RAJUT-XLT",
+      "price": 82000,
+      "cost": 67000,
+      "stock": 11
+    },
+    {
+      "id": "RAJUT-TALI",
+      "name": "RAJUT-TALI",
+      "price": 63000,
+      "cost": 52000,
+      "stock": 1
+    },
+    {
+      "id": "SB-35",
+      "name": "SB-35",
+      "price": 35000,
+      "cost": 26000,
+      "stock": 978
+    },
+    {
+      "id": "TRANING-IMPORT",
+      "name": "TRANING-IMPORT",
+      "price": 50000,
+      "cost": 40000,
+      "stock": 100
+    },
+    {
+      "id": "LEJING",
+      "name": "LEJING",
+      "price": 20000,
+      "cost": 13000,
+      "stock": 999
+    }
+  ],
+  "transactions": [
+    {
+      "id": "TRX-1753000730624",
+      "date": "2025-07-20T08:38:50.624Z",
+      "items": [
+        {
+          "productId": "B-LOSSE-JEANS",
+          "name": "B-LOSSE-JEANS",
+          "qty": 1,
+          "price": 100000,
+          "cost": 80000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 100000,
+      "discountAmount": 0,
+      "totalAmount": 100000,
+      "paymentAmount": 100000,
+      "changeAmount": 0,
+      "cashier": "azy",
+      "transactionNetProfit": 20000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1753000627074",
+      "date": "2025-07-20T08:37:07.074Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 35000,
+      "discountAmount": 0,
+      "totalAmount": 35000,
+      "paymentAmount": 50000,
+      "changeAmount": 15000,
+      "cashier": "azy",
+      "transactionNetProfit": 9000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752999604011",
+      "date": "2025-07-20T08:20:04.011Z",
+      "items": [
+        {
+          "productId": "custom-1752999583501",
+          "name": "cb-ly-jumbo",
+          "qty": 2,
+          "price": 120000,
+          "cost": 96000,
+          "isCustom": true,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 240000,
+      "discountAmount": 0,
+      "totalAmount": 240000,
+      "paymentAmount": 250000,
+      "changeAmount": 10000,
+      "cashier": "azy",
+      "transactionNetProfit": 48000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752930123983",
+      "date": "2025-07-19T13:02:03.983Z",
+      "items": [
+        {
+          "productId": "custom-1752930118674",
+          "name": "kaos kaki",
+          "qty": 1,
+          "price": 10000,
+          "cost": 8000,
+          "isCustom": true,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 10000,
+      "discountAmount": 0,
+      "totalAmount": 10000,
+      "paymentAmount": 10000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 2000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752923829846",
+      "date": "2025-07-19T11:17:09.846Z",
+      "items": [
+        {
+          "productId": "online-1752923828329",
+          "name": "Produk Online (TikTok)",
+          "qty": 1,
+          "price": 125000,
+          "cost": 93750,
+          "isCustom": false,
+          "isOnlineShop": true,
+          "marketplace": "TikTok",
+          "resi": "8186"
+        }
+      ],
+      "subtotalAmount": 125000,
+      "discountAmount": 0,
+      "totalAmount": 125000,
+      "paymentAmount": 125000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 31250,
+      "paymentMethod": "Transfer Bank"
+    },
+    {
+      "id": "TRX-1752923801894",
+      "date": "2025-07-19T11:16:41.894Z",
+      "items": [
+        {
+          "productId": "online-1752923799746",
+          "name": "Produk Online (TikTok)",
+          "qty": 3,
+          "price": 165000,
+          "cost": 123750,
+          "isCustom": false,
+          "isOnlineShop": true,
+          "marketplace": "TikTok",
+          "resi": "917"
+        }
+      ],
+      "subtotalAmount": 495000,
+      "discountAmount": 0,
+      "totalAmount": 495000,
+      "paymentAmount": 495000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 123750,
+      "paymentMethod": "Transfer Bank"
+    },
+    {
+      "id": "TRX-1752923757127",
+      "date": "2025-07-19T11:15:57.127Z",
+      "items": [
+        {
+          "productId": "online-1752923749462",
+          "name": "Produk Online (Shopee)",
+          "qty": 4,
+          "price": 170000,
+          "cost": 127500,
+          "isCustom": false,
+          "isOnlineShop": true,
+          "marketplace": "Shopee",
+          "resi": "917"
+        }
+      ],
+      "subtotalAmount": 680000,
+      "discountAmount": 0,
+      "totalAmount": 680000,
+      "paymentAmount": 680000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 170000,
+      "paymentMethod": "Transfer Bank"
+    },
+    {
+      "id": "TRX-1752922587705",
+      "date": "2025-07-19T10:56:27.705Z",
+      "items": [
+        {
+          "productId": "AR-KEMEJA-POLOS",
+          "name": "AR-KEMEJA-POLOS",
+          "qty": 1,
+          "price": 42000,
+          "cost": 35000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 42000,
+      "discountAmount": 0,
+      "totalAmount": 42000,
+      "paymentAmount": 50000,
+      "changeAmount": 8000,
+      "cashier": "admin",
+      "transactionNetProfit": 7000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752913088164",
+      "date": "2025-07-19T08:18:08.164Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 35000,
+      "discountAmount": 0,
+      "totalAmount": 35000,
+      "paymentAmount": 50000,
+      "changeAmount": 15000,
+      "cashier": "admin",
+      "transactionNetProfit": 9000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752844065105",
+      "date": "2025-07-18T13:07:45.105Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 35000,
+      "discountAmount": 0,
+      "totalAmount": 35000,
+      "paymentAmount": 50000,
+      "changeAmount": 15000,
+      "cashier": "admin",
+      "transactionNetProfit": 9000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752844047829",
+      "date": "2025-07-18T13:07:27.829Z",
+      "items": [
+        {
+          "productId": "custom-1752844044367",
+          "name": "kaos kaki",
+          "qty": 1,
+          "price": 50000,
+          "cost": 40000,
+          "isCustom": true,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 50000,
+      "discountAmount": 0,
+      "totalAmount": 50000,
+      "paymentAmount": 50000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 10000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752844020458",
+      "date": "2025-07-18T13:07:00.458Z",
+      "items": [
+        {
+          "productId": "LY-BASIC-JEANS",
+          "name": "LY-BASIC-JEANS",
+          "qty": 1,
+          "price": 108000,
+          "cost": 95000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 108000,
+      "discountAmount": 0,
+      "totalAmount": 108000,
+      "paymentAmount": 110000,
+      "changeAmount": 2000,
+      "cashier": "admin",
+      "transactionNetProfit": 13000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752665387614",
+      "date": "2025-07-16T11:29:47.614Z",
+      "items": [
+        {
+          "productId": "online-1752665381887",
+          "name": "Produk Online (Shopee)",
+          "qty": 2,
+          "price": 180000,
+          "cost": 135000,
+          "isCustom": false,
+          "isOnlineShop": true,
+          "marketplace": "Shopee",
+          "resi": "m-917"
+        }
+      ],
+      "subtotalAmount": 360000,
+      "discountAmount": 0,
+      "totalAmount": 360000,
+      "paymentAmount": 360000,
+      "changeAmount": 0,
+      "cashier": "azy",
+      "transactionNetProfit": 90000,
+      "paymentMethod": "Transfer Bank"
+    },
+    {
+      "id": "TRX-1752650450869",
+      "date": "2025-07-16T07:20:50.869Z",
+      "items": [
+        {
+          "productId": "custom-1752650448228",
+          "name": "kaos kaki",
+          "qty": 1,
+          "price": 50000,
+          "cost": 40000,
+          "isCustom": true,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 50000,
+      "discountAmount": 0,
+      "totalAmount": 50000,
+      "paymentAmount": 50000,
+      "changeAmount": 0,
+      "cashier": "azy",
+      "transactionNetProfit": 10000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752580206440",
+      "date": "2025-07-15T11:50:06.440Z",
+      "items": [
+        {
+          "productId": "AR-KEMEJA-POLOS",
+          "name": "AR-KEMEJA-POLOS",
+          "qty": 1,
+          "price": 42000,
+          "cost": 35000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 42000,
+      "discountAmount": 0,
+      "totalAmount": 42000,
+      "paymentAmount": 50000,
+      "changeAmount": 8000,
+      "cashier": "azy",
+      "transactionNetProfit": 7000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752499200554",
+      "date": "2025-07-14T13:20:00.554Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 35000,
+      "discountAmount": 0,
+      "totalAmount": 35000,
+      "paymentAmount": 50000,
+      "changeAmount": 15000,
+      "cashier": "admin",
+      "transactionNetProfit": 9000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752417094375",
+      "date": "2025-07-13T14:31:34.375Z",
+      "items": [
+        {
+          "productId": "custom-1752417088661",
+          "name": "kaos kaki",
+          "qty": 1,
+          "price": 45000,
+          "cost": 36000,
+          "isCustom": true,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 45000,
+      "discountAmount": 0,
+      "totalAmount": 45000,
+      "paymentAmount": 50000,
+      "changeAmount": 5000,
+      "cashier": "admin",
+      "transactionNetProfit": 9000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752408033289",
+      "date": "2025-07-13T12:00:33.289Z",
+      "items": [
+        {
+          "productId": "SKENA-JEANS",
+          "name": "SKENA-JEANS",
+          "qty": 1,
+          "price": 114000,
+          "cost": 95000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 114000,
+      "discountAmount": 0,
+      "totalAmount": 114000,
+      "paymentAmount": 150000,
+      "changeAmount": 36000,
+      "cashier": "azy",
+      "transactionNetProfit": 19000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752397961535",
+      "date": "2025-07-13T09:12:41.535Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 2,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 70000,
+      "discountAmount": 0,
+      "totalAmount": 70000,
+      "paymentAmount": 70000,
+      "changeAmount": 0,
+      "cashier": "azy",
+      "transactionNetProfit": 18000,
+      "paymentMethod": "QRIS"
+    },
+    {
+      "id": "TRX-1752394783580",
+      "date": "2025-07-13T08:19:43.580Z",
+      "items": [
+        {
+          "productId": "CB-LY-JEANS",
+          "name": "CB-LY-JEANS",
+          "qty": 1,
+          "price": 114000,
+          "cost": 95000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 114000,
+      "discountAmount": 0,
+      "totalAmount": 114000,
+      "paymentAmount": 150000,
+      "changeAmount": 36000,
+      "cashier": "azy",
+      "transactionNetProfit": 19000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752391325261",
+      "date": "2025-07-13T07:22:05.261Z",
+      "items": [
+        {
+          "productId": "AENER-BF",
+          "name": "AENER-BF",
+          "qty": 1,
+          "price": 108000,
+          "cost": 86000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 108000,
+      "discountAmount": 0,
+      "totalAmount": 108000,
+      "paymentAmount": 110000,
+      "changeAmount": 2000,
+      "cashier": "azy",
+      "transactionNetProfit": 22000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752388015094",
+      "date": "2025-07-13T06:26:55.094Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 2,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        },
+        {
+          "productId": "custom-1752388006124",
+          "name": "manset tangan",
+          "qty": 1,
+          "price": 10000,
+          "cost": 8000,
+          "isCustom": true,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 80000,
+      "discountAmount": 0,
+      "totalAmount": 80000,
+      "paymentAmount": 80000,
+      "changeAmount": 0,
+      "cashier": "azy",
+      "transactionNetProfit": 20000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752323900036",
+      "date": "2025-07-12T12:38:20.036Z",
+      "items": [
+        {
+          "productId": "IMPORT-205",
+          "name": "IMPORT-205",
+          "qty": 2,
+          "price": 128000,
+          "cost": 105000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 256000,
+      "discountAmount": 10000,
+      "totalAmount": 246000,
+      "paymentAmount": 250000,
+      "changeAmount": 4000,
+      "cashier": "azy",
+      "transactionNetProfit": 36000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752320941548",
+      "date": "2025-07-12T11:49:01.548Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 35000,
+      "discountAmount": 0,
+      "totalAmount": 35000,
+      "paymentAmount": 100000,
+      "changeAmount": 65000,
+      "cashier": "unix",
+      "transactionNetProfit": 9000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752317073226",
+      "date": "2025-07-12T10:44:33.227Z",
+      "items": [
+        {
+          "productId": "M-917",
+          "name": "M-917",
+          "qty": 1,
+          "price": 160000,
+          "cost": 133000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 160000,
+      "discountAmount": 5000,
+      "totalAmount": 155000,
+      "paymentAmount": 155000,
+      "changeAmount": 0,
+      "cashier": "unix",
+      "transactionNetProfit": 22000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752243801028",
+      "date": "2025-07-11T14:23:21.028Z",
+      "items": [
+        {
+          "productId": "LY-BASIC-JUMBO",
+          "name": "LY-BASIC-JUMBO",
+          "qty": 1,
+          "price": 114000,
+          "cost": 81000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 114000,
+      "discountAmount": 0,
+      "totalAmount": 114000,
+      "paymentAmount": 120000,
+      "changeAmount": 6000,
+      "cashier": "admin",
+      "transactionNetProfit": 33000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752238915252",
+      "date": "2025-07-11T13:01:55.252Z",
+      "items": [
+        {
+          "productId": "IMPORT-205",
+          "name": "IMPORT-205",
+          "qty": 1,
+          "price": 128000,
+          "cost": 105000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 128000,
+      "discountAmount": 3000,
+      "totalAmount": 125000,
+      "paymentAmount": 125000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 20000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752237008388",
+      "date": "2025-07-11T12:30:08.388Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 35000,
+      "discountAmount": 0,
+      "totalAmount": 35000,
+      "paymentAmount": 50000,
+      "changeAmount": 15000,
+      "cashier": "admin",
+      "transactionNetProfit": 9000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752226796026",
+      "date": "2025-07-11T09:39:56.026Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 35000,
+      "discountAmount": 0,
+      "totalAmount": 35000,
+      "paymentAmount": 50000,
+      "changeAmount": 15000,
+      "cashier": "admin",
+      "transactionNetProfit": 9000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752225287067",
+      "date": "2025-07-11T09:14:47.067Z",
+      "items": [
+        {
+          "productId": "HARA-KEMEJA",
+          "name": "HARA-KEMEJA",
+          "qty": 1,
+          "price": 63000,
+          "cost": 52000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 63000,
+      "discountAmount": 0,
+      "totalAmount": 63000,
+      "paymentAmount": 65000,
+      "changeAmount": 2000,
+      "cashier": "admin",
+      "transactionNetProfit": 11000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752153017112",
+      "date": "2025-07-10T13:10:17.112Z",
+      "items": [
+        {
+          "productId": "RAJUT-TALI",
+          "name": "RAJUT-TALI",
+          "qty": 1,
+          "price": 63000,
+          "cost": 52000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 63000,
+      "discountAmount": 0,
+      "totalAmount": 63000,
+      "paymentAmount": 63000,
+      "changeAmount": 0,
+      "cashier": "unix",
+      "transactionNetProfit": 11000,
+      "paymentMethod": "QRIS"
+    },
+    {
+      "id": "TRX-1752068358164",
+      "date": "2025-07-09T13:39:18.164Z",
+      "items": [
+        {
+          "productId": "AR-KEMEJA-POLOS",
+          "name": "AR-KEMEJA-POLOS",
+          "qty": 1,
+          "price": 42000,
+          "cost": 35000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 42000,
+      "discountAmount": 0,
+      "totalAmount": 42000,
+      "paymentAmount": 42000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 7000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1752037461875",
+      "date": "2025-07-09T05:04:21.875Z",
+      "items": [
+        {
+          "productId": "M-113147",
+          "name": "M-113147",
+          "qty": 1,
+          "price": 144000,
+          "cost": 122000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        },
+        {
+          "productId": "M-917",
+          "name": "M-917",
+          "qty": 4,
+          "price": 160000,
+          "cost": 133000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        },
+        {
+          "productId": "8186",
+          "name": "8186",
+          "qty": 1,
+          "price": 128000,
+          "cost": 108000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 912000,
+      "discountAmount": 0,
+      "totalAmount": 912000,
+      "paymentAmount": 912000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 150000,
+      "paymentMethod": "Transfer Bank"
+    },
+    {
+      "id": "TRX-1752037213471",
+      "date": "2025-07-09T05:00:13.471Z",
+      "items": [
+        {
+          "productId": "KNIT-IMPOR",
+          "name": "KNIT-IMPOR",
+          "qty": 1,
+          "price": 84000,
+          "cost": 68000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 84000,
+      "discountAmount": 0,
+      "totalAmount": 84000,
+      "paymentAmount": 100000,
+      "changeAmount": 16000,
+      "cashier": "admin",
+      "transactionNetProfit": 16000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751976313314",
+      "date": "2025-07-08T12:05:13.314Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 35000,
+      "discountAmount": 0,
+      "totalAmount": 35000,
+      "paymentAmount": 50000,
+      "changeAmount": 15000,
+      "cashier": "admin",
+      "transactionNetProfit": 9000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751976176388",
+      "date": "2025-07-08T12:02:56.388Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 35000,
+      "discountAmount": 0,
+      "totalAmount": 35000,
+      "paymentAmount": 50000,
+      "changeAmount": 15000,
+      "cashier": "admin",
+      "transactionNetProfit": 9000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751787348108",
+      "date": "2025-07-06T07:35:48.108Z",
+      "items": [
+        {
+          "productId": "AR-KEMEJA-POLOS",
+          "name": "AR-KEMEJA-POLOS",
+          "qty": 1,
+          "price": 42000,
+          "cost": 35000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 42000,
+      "discountAmount": 0,
+      "totalAmount": 42000,
+      "paymentAmount": 50000,
+      "changeAmount": 8000,
+      "cashier": "admin",
+      "transactionNetProfit": 7000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751780092198",
+      "date": "2025-07-06T05:34:52.198Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        },
+        {
+          "productId": "ZST-CUTBRAY",
+          "name": "ZST-CUTBRAY",
+          "qty": 1,
+          "price": 120000,
+          "cost": 100000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        },
+        {
+          "productId": "SKENA-JEANS",
+          "name": "SKENA-JEANS",
+          "qty": 1,
+          "price": 114000,
+          "cost": 95000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 269000,
+      "discountAmount": 0,
+      "totalAmount": 269000,
+      "paymentAmount": 350000,
+      "changeAmount": 81000,
+      "cashier": "admin",
+      "transactionNetProfit": 48000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751734083504",
+      "date": "2025-07-05T16:48:03.504Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 35000,
+      "discountAmount": 0,
+      "totalAmount": 35000,
+      "paymentAmount": 50000,
+      "changeAmount": 15000,
+      "cashier": "admin",
+      "transactionNetProfit": 9000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751668728966",
+      "date": "2025-07-04T22:38:48.966Z",
+      "items": [
+        {
+          "productId": "IMPORT-205",
+          "name": "IMPORT-205",
+          "qty": 1,
+          "price": 128000,
+          "cost": 105000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        },
+        {
+          "productId": "HARA-KEMEJA",
+          "name": "HARA-KEMEJA",
+          "qty": 1,
+          "price": 63000,
+          "cost": 52000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 191000,
+      "discountAmount": 1000,
+      "totalAmount": 190000,
+      "paymentAmount": 200000,
+      "changeAmount": 10000,
+      "cashier": "admin",
+      "transactionNetProfit": 33000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751639906861",
+      "date": "2025-07-04T14:38:26.861Z",
+      "items": [
+        {
+          "productId": "online-1751639903422",
+          "name": "Produk Online (Shopee)",
+          "qty": 1,
+          "price": 370000,
+          "cost": 277500,
+          "isCustom": false,
+          "isOnlineShop": true,
+          "marketplace": "Shopee",
+          "resi": "shope"
+        }
+      ],
+      "subtotalAmount": 370000,
+      "discountAmount": 0,
+      "totalAmount": 370000,
+      "paymentAmount": 370000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 92500,
+      "paymentMethod": "Transfer Bank"
+    },
+    {
+      "id": "TRX-1751639537735",
+      "date": "2025-07-04T14:32:17.735Z",
+      "items": [
+        {
+          "productId": "AR-KEMEJA",
+          "name": "AR-KEMEJA",
+          "qty": 1,
+          "price": 50000,
+          "cost": 42000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        },
+        {
+          "productId": "LEJING",
+          "name": "LEJING",
+          "qty": 1,
+          "price": 20000,
+          "cost": 13000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 70000,
+      "discountAmount": 0,
+      "totalAmount": 70000,
+      "paymentAmount": 100000,
+      "changeAmount": 30000,
+      "cashier": "admin",
+      "transactionNetProfit": 15000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751639522715",
+      "date": "2025-07-04T14:32:02.715Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        },
+        {
+          "productId": "RAJUT-PREMIUM",
+          "name": "RAJUT-PREMIUM",
+          "qty": 1,
+          "price": 96000,
+          "cost": 80000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 131000,
+      "discountAmount": 1000,
+      "totalAmount": 130000,
+      "paymentAmount": 130000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 24000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751639499024",
+      "date": "2025-07-04T14:31:39.024Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 35000,
+      "discountAmount": 0,
+      "totalAmount": 35000,
+      "paymentAmount": 50000,
+      "changeAmount": 15000,
+      "cashier": "admin",
+      "transactionNetProfit": 9000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751639488362",
+      "date": "2025-07-04T14:31:28.362Z",
+      "items": [
+        {
+          "productId": "RAJUT-TALI",
+          "name": "RAJUT-TALI",
+          "qty": 1,
+          "price": 63000,
+          "cost": 52000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        },
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 98000,
+      "discountAmount": 3000,
+      "totalAmount": 95000,
+      "paymentAmount": 100000,
+      "changeAmount": 5000,
+      "cashier": "admin",
+      "transactionNetProfit": 17000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751639460494",
+      "date": "2025-07-04T14:31:00.494Z",
+      "items": [
+        {
+          "productId": "LY-CARGO-JEANS",
+          "name": "LY-CARGO-JEANS",
+          "qty": 1,
+          "price": 108000,
+          "cost": 92000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 108000,
+      "discountAmount": 0,
+      "totalAmount": 108000,
+      "paymentAmount": 120000,
+      "changeAmount": 12000,
+      "cashier": "admin",
+      "transactionNetProfit": 16000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751639444031",
+      "date": "2025-07-04T14:30:44.031Z",
+      "items": [
+        {
+          "productId": "ZST-CUTBRAY",
+          "name": "ZST-CUTBRAY",
+          "qty": 1,
+          "price": 120000,
+          "cost": 100000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        },
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 155000,
+      "discountAmount": 0,
+      "totalAmount": 155000,
+      "paymentAmount": 205000,
+      "changeAmount": 50000,
+      "cashier": "admin",
+      "transactionNetProfit": 29000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751449953244",
+      "date": "2025-07-02T09:52:33.244Z",
+      "items": [
+        {
+          "productId": "RAJUT-TALI",
+          "name": "RAJUT-TALI",
+          "qty": 1,
+          "price": 63000,
+          "cost": 52000,
+          "isCustom": false
+        }
+      ],
+      "subtotalAmount": 63000,
+      "discountAmount": 0,
+      "totalAmount": 63000,
+      "paymentAmount": 100000,
+      "changeAmount": 37000,
+      "cashier": "admin",
+      "transactionNetProfit": 11000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751446893405",
+      "date": "2025-07-02T09:01:33.405Z",
+      "items": [
+        {
+          "productId": "M-917",
+          "name": "M-917",
+          "qty": 1,
+          "price": 160000,
+          "cost": 133000,
+          "isCustom": false
+        },
+        {
+          "productId": "SKENA-JEANS",
+          "name": "SKENA-JEANS",
+          "qty": 1,
+          "price": 114000,
+          "cost": 95000,
+          "isCustom": false
+        }
+      ],
+      "subtotalAmount": 274000,
+      "discountAmount": 4000,
+      "totalAmount": 270000,
+      "paymentAmount": 300000,
+      "changeAmount": 30000,
+      "cashier": "admin",
+      "transactionNetProfit": 42000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751382555403",
+      "date": "2025-07-01T15:09:15.403Z",
+      "items": [
+        {
+          "productId": "IMPORT-2727",
+          "name": "IMPORT-2727",
+          "qty": 1,
+          "price": 116000,
+          "cost": 95000,
+          "isCustom": false
+        },
+        {
+          "productId": "custom-1751382539454",
+          "name": "knith-premium",
+          "qty": 1,
+          "price": 96000,
+          "cost": 76800,
+          "isCustom": true
+        }
+      ],
+      "subtotalAmount": 212000,
+      "discountAmount": 0,
+      "totalAmount": 212000,
+      "paymentAmount": 212000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 40200,
+      "paymentMethod": "QRIS"
+    },
+    {
+      "id": "TRX-1751382506045",
+      "date": "2025-07-01T15:08:26.045Z",
+      "items": [
+        {
+          "productId": "ZST-CUTBRAY",
+          "name": "ZST-CUTBRAY",
+          "qty": 1,
+          "price": 120000,
+          "cost": 100000,
+          "isCustom": false
+        },
+        {
+          "productId": "CB-LY-JEANS",
+          "name": "CB-LY-JEANS",
+          "qty": 1,
+          "price": 112000,
+          "cost": 95000,
+          "isCustom": false
+        },
+        {
+          "productId": "custom-1751382429368",
+          "name": "lejing",
+          "qty": 1,
+          "price": 20000,
+          "cost": 16000,
+          "isCustom": true
+        },
+        {
+          "productId": "custom-1751382450769",
+          "name": "rajut-xlt",
+          "qty": 1,
+          "price": 85000,
+          "cost": 68000,
+          "isCustom": true
+        },
+        {
+          "productId": "custom-1751382472315",
+          "name": "sb-35",
+          "qty": 2,
+          "price": 35000,
+          "cost": 28000,
+          "isCustom": true
+        }
+      ],
+      "subtotalAmount": 407000,
+      "discountAmount": 7000,
+      "totalAmount": 400000,
+      "paymentAmount": 400000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 65000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751382398434",
+      "date": "2025-07-01T15:06:38.434Z",
+      "items": [
+        {
+          "productId": "custom-1751382388119",
+          "name": "traning",
+          "qty": 1,
+          "price": 50000,
+          "cost": 40000,
+          "isCustom": true
+        }
+      ],
+      "subtotalAmount": 50000,
+      "discountAmount": 0,
+      "totalAmount": 50000,
+      "paymentAmount": 50000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 10000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751382374271",
+      "date": "2025-07-01T15:06:14.271Z",
+      "items": [
+        {
+          "productId": "CB-KNIT-IMPOR",
+          "name": "CB-KNIT-IMPOR",
+          "qty": 1,
+          "price": 86000,
+          "cost": 71000,
+          "isCustom": false
+        }
+      ],
+      "subtotalAmount": 86000,
+      "discountAmount": 0,
+      "totalAmount": 86000,
+      "paymentAmount": 100000,
+      "changeAmount": 14000,
+      "cashier": "admin",
+      "transactionNetProfit": 15000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751372372740",
+      "date": "2025-07-01T12:19:32.740Z",
+      "items": [
+        {
+          "productId": "M-917",
+          "name": "160000",
+          "qty": 1,
+          "price": 160000,
+          "cost": 133000,
+          "isCustom": false
+        }
+      ],
+      "subtotalAmount": 160000,
+      "discountAmount": 5000,
+      "totalAmount": 155000,
+      "paymentAmount": 155000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 22000,
+      "paymentMethod": "Transfer Bank"
+    },
+    {
+      "id": "TRX-1751293589936",
+      "date": "2025-06-30T14:26:29.937Z",
+      "items": [
+        {
+          "productId": "custom-1751293584528",
+          "name": "kaos kaki",
+          "qty": 1,
+          "price": 5000,
+          "cost": 4000,
+          "isCustom": true
+        }
+      ],
+      "subtotalAmount": 5000,
+      "discountAmount": 0,
+      "totalAmount": 5000,
+      "paymentAmount": 5000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 1000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751291906372",
+      "date": "2025-06-30T13:58:26.372Z",
+      "items": [
+        {
+          "productId": "custom-1751291899068",
+          "name": "kaos kaki",
+          "qty": 1,
+          "price": 10000,
+          "cost": 8000,
+          "isCustom": true
+        }
+      ],
+      "subtotalAmount": 10000,
+      "discountAmount": 0,
+      "totalAmount": 10000,
+      "paymentAmount": 10000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 2000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751289460552",
+      "date": "2025-06-30T13:17:40.552Z",
+      "items": [
+        {
+          "productId": "custom-1751289453707",
+          "name": "sb-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 28000,
+          "isCustom": true
+        }
+      ],
+      "subtotalAmount": 35000,
+      "discountAmount": 0,
+      "totalAmount": 35000,
+      "paymentAmount": 50000,
+      "changeAmount": 15000,
+      "cashier": "admin",
+      "transactionNetProfit": 7000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751289352815",
+      "date": "2025-06-30T13:15:52.815Z",
+      "items": [
+        {
+          "productId": "custom-1751289174810",
+          "name": "sb-35",
+          "qty": 2,
+          "price": 35000,
+          "cost": 28000,
+          "isCustom": true
+        },
+        {
+          "productId": "custom-1751289298962",
+          "name": "lejing",
+          "qty": 2,
+          "price": 20000,
+          "cost": 16000,
+          "isCustom": true
+        }
+      ],
+      "subtotalAmount": 110000,
+      "discountAmount": 0,
+      "totalAmount": 110000,
+      "paymentAmount": 110000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 22000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751202555109",
+      "date": "2025-06-29T13:09:15.109Z",
+      "items": [
+        {
+          "productId": "AR-KEMEJA",
+          "name": "AR-KEMEJA",
+          "qty": 1,
+          "price": 48000,
+          "cost": 40000,
+          "isCustom": false
+        }
+      ],
+      "subtotalAmount": 48000,
+      "discountAmount": 0,
+      "totalAmount": 48000,
+      "paymentAmount": 50000,
+      "changeAmount": 2000,
+      "cashier": "admin",
+      "transactionNetProfit": 8000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751200427514",
+      "date": "2025-06-29T12:33:47.514Z",
+      "items": [
+        {
+          "productId": "IMPORT-2727",
+          "name": "IMPORT-2727",
+          "qty": 1,
+          "price": 116000,
+          "cost": 95000,
+          "isCustom": false
+        }
+      ],
+      "subtotalAmount": 116000,
+      "discountAmount": 0,
+      "totalAmount": 116000,
+      "paymentAmount": 150000,
+      "changeAmount": 34000,
+      "cashier": "admin",
+      "transactionNetProfit": 21000,
+      "paymentMethod": "QRIS"
+    },
+    {
+      "id": "TRX-1751193303691",
+      "date": "2025-06-29T10:35:03.691Z",
+      "items": [
+        {
+          "productId": "AR-KEMEJA",
+          "name": "AR-KEMEJA",
+          "qty": 1,
+          "price": 48000,
+          "cost": 40000,
+          "isCustom": false
+        },
+        {
+          "productId": "custom-1751193228311",
+          "name": "LEJING",
+          "qty": 2,
+          "price": 20000,
+          "cost": 16000,
+          "isCustom": true
+        },
+        {
+          "productId": "custom-1751193250694",
+          "name": "SB-35",
+          "qty": 2,
+          "price": 35000,
+          "cost": 28000,
+          "isCustom": true
+        }
+      ],
+      "subtotalAmount": 158000,
+      "discountAmount": 0,
+      "totalAmount": 158000,
+      "paymentAmount": 158000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 30000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751193165777",
+      "date": "2025-06-29T10:32:45.777Z",
+      "items": [
+        {
+          "productId": "IC-KEMEJA",
+          "name": "IC-KEMEJA",
+          "qty": 1,
+          "price": 89000,
+          "cost": 73000,
+          "isCustom": false
+        }
+      ],
+      "subtotalAmount": 89000,
+      "discountAmount": 0,
+      "totalAmount": 89000,
+      "paymentAmount": 100000,
+      "changeAmount": 11000,
+      "cashier": "admin",
+      "transactionNetProfit": 16000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1751105414528",
+      "date": "2025-06-28T10:10:14.528Z",
+      "items": [
+        {
+          "productId": "custom-1751105400355",
+          "name": "dicount jeans",
+          "qty": 2,
+          "price": 75000,
+          "cost": 60000,
+          "isCustom": true
+        }
+      ],
+      "subtotalAmount": 150000,
+      "discountAmount": 0,
+      "totalAmount": 150000,
+      "paymentAmount": 150000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 30000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1750947124066",
+      "date": "2025-06-26T14:12:04.066Z",
+      "items": [
+        {
+          "productId": "AENER-BF",
+          "name": "AENER-BF",
+          "qty": 1,
+          "price": 108000,
+          "cost": 86000,
+          "isCustom": false
+        },
+        {
+          "productId": "custom-1750947066717",
+          "name": "kemeja-40",
+          "qty": 1,
+          "price": 40000,
+          "cost": 32000,
+          "isCustom": true
+        }
+      ],
+      "subtotalAmount": 148000,
+      "discountAmount": 3000,
+      "totalAmount": 145000,
+      "paymentAmount": 145000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 27000,
+      "paymentMethod": "QRIS"
+    },
+    {
+      "id": "TRX-1750946978949",
+      "date": "2025-06-26T14:09:38.949Z",
+      "items": [
+        {
+          "productId": "AR-KEMEJA",
+          "name": "AR-KEMEJA",
+          "qty": 1,
+          "price": 48000,
+          "cost": 40000,
+          "isCustom": false
+        }
+      ],
+      "subtotalAmount": 48000,
+      "discountAmount": 0,
+      "totalAmount": 48000,
+      "paymentAmount": 50000,
+      "changeAmount": 2000,
+      "cashier": "admin",
+      "transactionNetProfit": 8000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1750946941593",
+      "date": "2025-06-26T14:09:01.593Z",
+      "items": [
+        {
+          "productId": "KNITH-RIB",
+          "name": "KNITH-RIB",
+          "qty": 1,
+          "price": 40000,
+          "cost": 32000,
+          "isCustom": false
+        },
+        {
+          "productId": "custom-1750946908987",
+          "name": "sb-35",
+          "qty": 1,
+          "price": 35000,
+          "cost": 28000,
+          "isCustom": true
+        }
+      ],
+      "subtotalAmount": 75000,
+      "discountAmount": 0,
+      "totalAmount": 75000,
+      "paymentAmount": 100000,
+      "changeAmount": 25000,
+      "cashier": "admin",
+      "transactionNetProfit": 15000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1750840446360",
+      "date": "2025-06-25T08:34:06.360Z",
+      "items": [
+        {
+          "productId": "custom-1750840437641",
+          "name": "M-CARGO",
+          "qty": 2,
+          "price": 120000,
+          "cost": 96000,
+          "isCustom": true
+        }
+      ],
+      "subtotalAmount": 240000,
+      "discountAmount": 0,
+      "totalAmount": 240000,
+      "paymentAmount": 250000,
+      "changeAmount": 10000,
+      "cashier": "admin",
+      "transactionNetProfit": 48000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1750759528791",
+      "date": "2025-06-24T10:05:28.791Z",
+      "items": [
+        {
+          "productId": "custom-1750759515470",
+          "name": "kaos kaki",
+          "qty": 2,
+          "price": 10000,
+          "cost": 8000,
+          "isCustom": true
+        }
+      ],
+      "subtotalAmount": 20000,
+      "discountAmount": 0,
+      "totalAmount": 20000,
+      "paymentAmount": 20000,
+      "changeAmount": 0,
+      "cashier": "admin",
+      "transactionNetProfit": 4000,
+      "paymentMethod": "Tunai"
+    },
+    {
+      "id": "TRX-1753006678847",
+      "date": "2025-07-20T10:17:58.847Z",
+      "items": [
+        {
+          "productId": "SB-35",
+          "name": "SB-35",
+          "qty": 3,
+          "price": 35000,
+          "cost": 26000,
+          "isCustom": false,
+          "isOnlineShop": false,
+          "marketplace": "",
+          "resi": ""
+        }
+      ],
+      "subtotalAmount": 105000,
+      "discountAmount": 5000,
+      "totalAmount": 100000,
+      "paymentAmount": 100000,
+      "changeAmount": 0,
+      "cashier": "azy",
+      "transactionNetProfit": 22000,
+      "paymentMethod": "Tunai"
+    }
+  ],
+  "expenses": [
+    {
+      "id": "EXP-1753065873910",
+      "date": "2025-07-21",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1753065883573",
+      "date": "2025-07-21",
+      "description": "bensin",
+      "amount": 25000
+    },
+    {
+      "id": "EXP-1753006708228",
+      "date": "2025-07-20",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1753006716744",
+      "date": "2025-07-20",
+      "description": "rokok",
+      "amount": 23000
+    },
+    {
+      "id": "EXP-1753014680773",
+      "date": "2025-07-20",
+      "description": "Peralatan Toko",
+      "amount": 85000
+    },
+    {
+      "id": "EXP-1752844091151",
+      "date": "2025-07-18",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1752844099555",
+      "date": "2025-07-18",
+      "description": "rokok",
+      "amount": 10000
+    },
+    {
+      "id": "EXP-1752760760723",
+      "date": "2025-07-17",
+      "description": "kopi",
+      "amount": 4000
+    },
+    {
+      "id": "EXP-1752761637054",
+      "date": "2025-07-17",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1752637757424",
+      "date": "2025-07-16",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1752637764176",
+      "date": "2025-07-16",
+      "description": "kopi",
+      "amount": 4000
+    },
+    {
+      "id": "EXP-1752637993456",
+      "date": "2025-07-16",
+      "description": "token rumah",
+      "amount": 50000
+    },
+    {
+      "id": "EXP-1752650429513",
+      "date": "2025-07-16",
+      "description": "prosesor",
+      "amount": 125000
+    },
+    {
+      "id": "EXP-1752578004854",
+      "date": "2025-07-15",
+      "description": "omgkos belanja",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1752578015464",
+      "date": "2025-07-15",
+      "description": "kopi",
+      "amount": 6000
+    },
+    {
+      "id": "EXP-1752462806167",
+      "date": "2025-07-14",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1752472885059",
+      "date": "2025-07-14",
+      "description": "kopi",
+      "amount": 9000
+    },
+    {
+      "id": "EXP-1752472893027",
+      "date": "2025-07-14",
+      "description": "bensin",
+      "amount": 15000
+    },
+    {
+      "id": "EXP-1752475337381",
+      "date": "2025-07-14",
+      "description": "bensin",
+      "amount": 15000
+    },
+    {
+      "id": "EXP-1752475348307",
+      "date": "2025-07-14",
+      "description": "makan",
+      "amount": 12000
+    },
+    {
+      "id": "EXP-1752387956361",
+      "date": "2025-07-13",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1752387965242",
+      "date": "2025-07-13",
+      "description": "jajan",
+      "amount": 6000
+    },
+    {
+      "id": "EXP-1752400217826",
+      "date": "2025-07-13",
+      "description": "rokok",
+      "amount": 23000
+    },
+    {
+      "id": "EXP-1752322747621",
+      "date": "2025-07-12",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1752322753666",
+      "date": "2025-07-12",
+      "description": "rokok",
+      "amount": 25000
+    },
+    {
+      "id": "EXP-1752322766386",
+      "date": "2025-07-12",
+      "description": "paket ongkir",
+      "amount": 10000
+    },
+    {
+      "id": "EXP-1752208567125",
+      "date": "2025-07-11",
+      "description": "rokok",
+      "amount": 11000
+    },
+    {
+      "id": "EXP-1752208578519",
+      "date": "2025-07-11",
+      "description": "bensin jajan",
+      "amount": 19000
+    },
+    {
+      "id": "EXP-1752208655655",
+      "date": "2025-07-11",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1752208673876",
+      "date": "2025-07-11",
+      "description": "berobat rumi",
+      "amount": 135000
+    },
+    {
+      "id": "EXP-1752208710440",
+      "date": "2025-07-11",
+      "description": "pulsa",
+      "amount": 76000
+    },
+    {
+      "id": "EXP-1752037233962",
+      "date": "2025-07-09",
+      "description": "jajan",
+      "amount": 8000
+    },
+    {
+      "id": "EXP-1752037243471",
+      "date": "2025-07-09",
+      "description": "jajan",
+      "amount": 10000
+    },
+    {
+      "id": "EXP-1752037251156",
+      "date": "2025-07-09",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1752037261534",
+      "date": "2025-07-09",
+      "description": "ongkos belanja",
+      "amount": 50000
+    },
+    {
+      "id": "EXP-1752037307742",
+      "date": "2025-07-09",
+      "description": "listrik",
+      "amount": 52000
+    },
+    {
+      "id": "EXP-1752037320058",
+      "date": "2025-07-09",
+      "description": "listrik rumah",
+      "amount": 50000
+    },
+    {
+      "id": "EXP-1752037336683",
+      "date": "2025-07-09",
+      "description": "kuata rocky",
+      "amount": 26000
+    },
+    {
+      "id": "EXP-1752055690547",
+      "date": "2025-07-09",
+      "description": "ronsen arumi",
+      "amount": 300000
+    },
+    {
+      "id": "EXP-1751976232007",
+      "date": "2025-07-08",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1751799782349",
+      "date": "2025-07-06",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1751799791843",
+      "date": "2025-07-06",
+      "description": "jajan",
+      "amount": 4000
+    },
+    {
+      "id": "EXP-1751819913064",
+      "date": "2025-07-06",
+      "description": "jajan sate",
+      "amount": 26000
+    },
+    {
+      "id": "EXP-1751732896033",
+      "date": "2025-07-05",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1751776894332",
+      "date": "2025-07-05",
+      "description": "rokok",
+      "amount": 23000
+    },
+    {
+      "id": "EXP-1751639829546",
+      "date": "2025-07-04",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1751639841249",
+      "date": "2025-07-04",
+      "description": "jajan",
+      "amount": 8000
+    },
+    {
+      "id": "EXP-1751639856861",
+      "date": "2025-07-04",
+      "description": "pulsa",
+      "amount": 35000
+    },
+    {
+      "id": "EXP-1751518585433",
+      "date": "2025-07-03",
+      "description": "sekolah",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1751525271134",
+      "date": "2025-07-03",
+      "description": "komputer",
+      "amount": 740000
+    },
+    {
+      "id": "EXP-1751429781512",
+      "date": "2025-07-02",
+      "description": "dapur",
+      "amount": 150000
+    },
+    {
+      "id": "EXP-1751445812668",
+      "date": "2025-07-02",
+      "description": "beli air",
+      "amount": 5000
+    },
+    {
+      "id": "EXP-1751445830988",
+      "date": "2025-07-02",
+      "description": "jajan mie ayam",
+      "amount": 10000
+    },
+    {
+      "id": "EXP-1751445842704",
+      "date": "2025-07-02",
+      "description": "listrik",
+      "amount": 53000
+    },
+    {
+      "id": "EXP-1751446128057",
+      "date": "2025-07-02",
+      "description": "rokok",
+      "amount": 13000
+    },
+    {
+      "id": "EXP-1751446383859",
+      "date": "2025-07-02",
+      "description": "kontrak rumah",
+      "amount": 800000
+    },
+    {
+      "id": "EXP-1751446400041",
+      "date": "2025-07-02",
+      "description": "bank bri",
+      "amount": 1500000
+    },
+    {
+      "id": "EXP-1751448516382",
+      "date": "2025-07-02",
+      "description": "service motor",
+      "amount": 150000
+    },
+    {
+      "id": "EXP-1751448526032",
+      "date": "2025-07-02",
+      "description": "rokok",
+      "amount": 58000
+    },
+    {
+      "id": "EXP-1751446371542",
+      "date": "2025-07-01",
+      "description": "kontrak toko",
+      "amount": 1500000
+    },
+    {
+      "id": "EXP-1751264662925",
+      "date": "2025-06-30",
+      "description": "bocah",
+      "amount": 6000
+    },
+    {
+      "id": "EXP-1751264673894",
+      "date": "2025-06-30",
+      "description": "rokok",
+      "amount": 20000
+    },
+    {
+      "id": "EXP-1751281044312",
+      "date": "2025-06-30",
+      "description": "berobat",
+      "amount": 130000
+    },
+    {
+      "id": "EXP-1751289659368",
+      "date": "2025-06-30",
+      "description": "kopi & gorengan",
+      "amount": 13000
+    },
+    {
+      "id": "EXP-1751293631046",
+      "date": "2025-06-30",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1751207473419",
+      "date": "2025-06-29",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1751186240347",
+      "date": "2025-06-28",
+      "description": "jajan",
+      "amount": 10000
+    },
+    {
+      "id": "EXP-1751186266540",
+      "date": "2025-06-28",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1751102722608",
+      "date": "2025-06-27",
+      "description": "rokok",
+      "amount": 23000
+    },
+    {
+      "id": "EXP-1751102748130",
+      "date": "2025-06-27",
+      "description": "bocah",
+      "amount": 32000
+    },
+    {
+      "id": "EXP-1751102763430",
+      "date": "2025-06-27",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1751102843922",
+      "date": "2025-06-27",
+      "description": "jajan",
+      "amount": 9000
+    },
+    {
+      "id": "EXP-1750947735129",
+      "date": "2025-06-26",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1750947744127",
+      "date": "2025-06-26",
+      "description": "bocah",
+      "amount": 10000
+    },
+    {
+      "id": "EXP-1750863142221",
+      "date": "2025-06-25",
+      "description": "dapur",
+      "amount": 100000
+    },
+    {
+      "id": "EXP-1750759578410",
+      "date": "2025-06-24",
+      "description": "bocah",
+      "amount": 10000
+    },
+    {
+      "id": "EXP-1750774049197",
+      "date": "2025-06-24",
+      "description": "rokok",
+      "amount": 23000
+    },
+    {
+      "id": "EXP-1750774056029",
+      "date": "2025-06-24",
+      "description": "kopi",
+      "amount": 9000
+    },
+    {
+      "id": "EXP-1750774077458",
+      "date": "2025-06-24",
+      "description": "dapur",
+      "amount": 100000
+    }
+  ],
+  "users": [
+    {
+      "username": "admin",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "username": "unix",
+      "password": "unix",
+      "role": "cashier"
+    },
+    {
+      "username": "azy",
+      "password": "azy",
+      "role": "admin"
+    }
+  ],
+  "dailyRevenue": 0,
+  "lastRecordedDate": "2025-07-21",
+  "isRevenueVisible": false,
+  "isDarkMode": false,
+  "monthlyNetProfit": 1552700,
+  "monthlyExpenses": 7859000,
+  "lastRecordedMonth": "2025-07",
+  "lastConnectedPrinterId": null
+}
