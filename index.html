@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UNIX FASHION</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom styles -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Web App Manifest for PWA -->
+    <link rel="manifest" href="manifest.json">
+    <!-- Apple Touch Icon for iOS PWA -->
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+    <!-- Theme Color for PWA -->
+    <meta name="theme-color" content="#10B981"/>
+    <!-- HTML5-QRCODE Library for QR/Barcode Scanning -->
+    <script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js"></script>
+    <!-- SheetJS CDN for Excel Export -->
+    <script src="https://unpkg.com/xlsx/dist/xlsx.full.min.js"></script>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <!-- Tombol Mode Terang/Gelap di luar halaman kasir -->
+    <button id="darkModeToggle" class="fixed top-28 right-5 cursor-pointer z-50" p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 shadow-md transition-colors duration-300">
+        <i class="fas fa-lightbulb text-lg"></i> <!-- Changed to lightbulb icon -->
+    </button>
+
+    <!-- Login Screen -->
+    <div id="login-screen" class="fixed inset-0 bg-gray-100 flex items-center justify-center z-50">
+        <div class="bg-white p-8 rounded-xl shadow-lg w-full max-w-sm text-center">
+            <h2 class="text-3xl font-bold text-green-700 mb-8">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيْمِ</h2>
+            <div class="mb-4">
+                <label for="login-username-input" class="block text-gray-700 text-sm font-medium mb-2 text-left">Nama Pengguna:</label>
+                <input type="text" id="login-username-input" placeholder="Masukkan nama pengguna"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200">
+            </div>
+            <div class="mb-6">
+                <label for="login-password-input" class="block text-gray-700 text-sm font-medium mb-2 text-left">Kata Sandi:</label>
+                <input type="password" id="login-password-input" placeholder="Masukkan kata sandi"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200">
+            </div>
+            <button id="login-screen-btn"
+                    class="bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold transition duration-200 shadow-md hover:scale-105 w-full">
+                Login
+            </button>
+            <div id="login-screen-message" class="mt-4 p-3 bg-red-100 border border-red-200 text-red-800 rounded-md hidden"></div>
+        </div>
+    </div>
+
+    <!-- Main Application Container -->
+    <!-- Removed max-w-7xl and mx-auto from main-app-container to allow full width -->
+    <div id="main-app-container" class="hidden flex flex-col min-h-screen w-full">
+        <!-- Header/Dashboard Bar -->
+        <header class="bg-green-600 text-white p-4 shadow-md">
+            <div class="max-w-full mx-auto flex justify-between items-center px-4 sm:px-6 lg:px-8">
+                <div class="flex items-center space-x-4">
+                    <span class="text-2xl font-bold">UNIX</span>
+                    <div>
+                        <p class="text-sm">Kasir: <span id="cashierDisplay">Admin</span> (<span id="cashierRole">admin</span>)</p>
+                        <p class="text-xs">Tanggal: <span id="headerDateTime">22 Juni 2025</span></p>
+                    </div>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <!-- Daily Revenue Display with Toggle Icon -->
+                    <div class="flex items-center space-x-2">
+                        <button id="toggleDailyRevenueVisibility" class="text-white hover:text-gray-200 focus:outline-none" title="Tampilkan/Sembunyikan Pendapatan Harian">
+                            <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z" />
+                            </svg>
+                            <svg id="eyeSlashIcon" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.542-7 .964-3.14 2.924-5.523 5.403-7.067m6.096 9.472a3 3 0 11-4.793-3.18m1.256-.474l3.141 3.14M5.714 5.714L18.825 18.825" />
+                            </svg>
+                        </button>
+                        <span class="text-2xl font-bold" id="headerDailyRevenueAmountContainer">Rp <span id="headerDailyRevenue">0</span></span>
+                    </div>
+                    <button id="open-printer-settings-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md shadow transition duration-300">
+                        <i class="fas fa-print mr-2"></i>Printer
+                    </button>
+                    <button id="open-transaction-history-btn" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md shadow transition duration-300">Riwayat Transaksi</button>
+                    <!-- NEW: Tombol untuk membuka modal cetak laporan harian -->
+                    <button id="open-daily-report-print-modal-btn" class="bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-md shadow transition duration-300">Cetak Laporan Harian</button>
+                    <div class="relative">
+                        <button id="adminMenuButton" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md shadow transition duration-300">Menu Admin</button>
+                        <!-- Dropdown Admin Menu -->
+                        <div id="admin-menu-dropdown" class="origin-top-right absolute right-0 mt-2 w-56 rounded-md shadow-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none hidden z-50" role="menu" aria-orientation="vertical" aria-labelledby="menu-button" tabindex="-1">
+                            <div class="py-1" role="none">
+                                <button id="open-price-calculator-modal-btn" class="text-gray-700 block px-4 py-2 text-sm w-full text-left hover:bg-gray-100" role="menuitem" tabindex="-1">Price Calculator</button>
+                                <button id="open-expenses-modal-btn" class="text-gray-700 block px-4 py-2 text-sm w-full text-left hover:bg-gray-100" role="menuitem" tabindex="-1">Pengeluaran</button>
+                                <button id="open-user-settings-modal-btn" class="text-gray-700 block px-4 py-2 text-sm w-full text-left hover:bg-gray-100" role="menuitem" tabindex="-1">Pengaturan Pengguna</button>
+                                <button id="open-financial-report-modal-btn" class="text-gray-700 block px-4 py-2 text-sm w-full text-left hover:bg-gray-100" role="menuitem" tabindex="-1">Laporan Keuangan</button>
+                                <button id="open-add-product-modal-btn" class="text-gray-700 block px-4 py-2 text-sm w-full text-left hover:bg-gray-100" role="menuitem" tabindex="-1">Tambah Produk Baru</button>
+                                <button id="open-store-products-modal-btn" class="text-gray-700 block px-4 py-2 text-sm w-full text-left hover:bg-gray-100" role="menuitem" tabindex="-1">Produk Toko</button>
+                                <hr class="my-1 border-gray-200">
+                                <button id="export-products-btn" class="text-green-700 block px-4 py-2 text-sm w-full text-left hover:bg-gray-100 font-semibold" role="menuitem" tabindex="-1">Ekspor Produk</button>
+                                <input type="file" id="import-products-file-input" accept=".json" class="hidden">
+                                <button id="import-products-btn" class="text-blue-700 block px-4 py-2 text-sm w-full text-left hover:bg-gray-100 font-semibold" role="menuitem" tabindex="-1">Impor Produk</button>
+                                <hr class="my-1 border-1 border-gray-200">
+                                <button id="export-data-btn" class="text-green-700 block px-4 py-2 text-sm w-full text-left hover:bg-gray-100 font-semibold" role="menuitem" tabindex="-1">Ekspor Data Aplikasi Lengkap</button>
+                                <input type="file" id="import-file-input" accept=".json" class="hidden">
+                                <button id="import-data-btn" class="text-blue-700 block px-4 py-2 text-sm w-full text-left hover:bg-gray-100 font-semibold" role="menuitem" tabindex="-1">Impor Data Aplikasi Lengkap</button>
+                                <hr class="my-1 border-1 border-gray-200">
+                                <button id="reset-all-data-btn" class="text-red-600 block px-4 py-2 text-sm w-full text-left hover:bg-red-100 font-semibold" role="menuitem" tabindex="-1">Reset Semua Data</button>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="bg-red-500 hover:bg-red-600 text-white font-semibold py-2 px-4 rounded-md shadow transition duration-300" id="logoutButton">Logout</button>
+                </div>
+            </div>
+            <!-- Monthly Financial Bar -->
+            <div id="monthly-financial-bar-container" class="max-w-full mx-auto mt-2 px-4 sm:px-6 lg:px-8">
+                <div id="monthly-profit-bar" class="h-full rounded-l-full"></div>
+                <div id="monthly-expense-bar" class="h-full rounded-r-full"></div>
+            </div>
+        </header>
+
+        <!-- Main Content Area -->
+        <!-- Removed max-w-7xl, mx-auto, and justify-center to allow full width -->
+        <div class="flex-1 p-4 sm:p-6 md:p-8 flex items-start w-full">
+            <!-- Container for the two columns, now takes full width -->
+            <div class="container bg-white rounded-xl shadow-xl p-6 sm:p-8 w-full border border-gray-200 grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Left Column: Product Input -->
+                <div class="product-input-panel">
+                    <h2 class="text-2xl font-semibold text-gray-800 mb-4">Transaksi</h2>
+                    
+                    <!-- Toggle Buttons for Transaction Types -->
+                    <div class="flex gap-4 mb-6">
+                        <button id="showRegisteredProducts" class="flex-1 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">
+                            Casier
+                        </button>
+                        <button id="showCustomProducts" class="flex-1 bg-gray-400 hover:bg-gray-500 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">
+                            Custom
+                        </button>
+                        <!-- NEW: Online Shop Button -->
+                        <button id="showOnlineShopProducts" class="flex-1 bg-purple-500 hover:bg-purple-600 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">
+                            <i class="fas fa-store mr-2"></i>Online Shop
+                        </button>
+                        <!-- NEW: QR/Barcode Scan Button -->
+                        <button id="showScannerProducts" class="flex-1 bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">
+                            <i class="fas fa-qrcode mr-2"></i>Scan QR
+                        </button>
+                    </div>
+
+                    <!-- Section for Registered Products Input Area -->
+                    <div id="registeredProductSection">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Casier</h3>
+                        
+                        <div class="mb-4">
+                            <label for="product-code" class="block text-gray-700 text-sm font-medium mb-2">Kode Produk :</label>
+                            <div class="flex">
+                                <input type="text" id="product-code" list="product-code-datalist" placeholder="Kode Barang" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm dark:bg-gray-700 dark:border-gray-600 dark:text-gray-200">
+                                <datalist id="product-code-datalist"></datalist>
+
+                                <!-- Tambahkan tombol pencarian di samping input kode produk -->
+                                <button id="searchProductByCodeBtn" class="ml-2 p-2 rounded-md bg-blue-500 text-white hover:bg-blue-600 transition duration-150">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="product-name" class="block text-gray-700 text-sm font-medium mb-2">Nama Produk (Otomatis) :</label>
+                            <input type="text" id="product-name" readonly disabled
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-100 cursor-not-allowed text-gray-800" placeholder="Nama produk akan muncul di sini">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="price" class="block text-gray-700 text-sm font-medium mb-2">Harga :</label>
+                            <input type="text" id="price" placeholder="Harga akan muncul di sini" value="0" readonly disabled
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md bg-gray-100 cursor-not-allowed text-gray-800">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="quantity" class="block text-gray-700 text-sm font-medium mb-2">Jumlah :</label>
+                            <input type="number" id="quantity" value="1" min="1"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200">
+                        </div>
+
+                        <button id="add-to-cart-btn-registered" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg font-semibold transition duration-200 shadow-md hover:scale-105 w-full mb-6">
+                            Proses Transaksi
+                        </button>
+                    </div>
+
+                    <!-- Section for Custom Products Input Area -->
+                    <div id="customProductSection" class="space-y-4 hidden">
+                        <h3 class="text-xl font-semibold text-gray-700">Custom</h3>
+                        
+                        <div class="mb-4">
+                            <label for="custom-product-code" class="block text-sm font-medium text-gray-700 mb-2">Kode Produk (Opsional) :</label>
+                            <input type="text" id="custom-product-code" placeholder="Kode unik (misal: CUST001)"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200">
+
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="custom-product-name" class="block text-sm font-medium text-gray-700 mb-2">Nama Produk (Wajib) :</label>
+                            <input type="text" id="custom-product-name" placeholder="Nama produk"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="custom-price" class="block text-sm font-medium text-gray-700 mb-2">Harga Jual (Wajib) :</label>
+                            <input type="number" id="custom-price" placeholder="Masukkan harga jual kustom" value="0" min="0"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="custom-quantity" class="block text-sm font-medium text-gray-700 mb-2">Jumlah :</label>
+                            <input type="number" id="custom-quantity" value="1" min="1"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 transition duration-200">
+                        </div>
+
+                        <button id="add-to-cart-btn-custom" class="bg-indigo-600 hover:bg-indigo-700 text-white px-5 py-2 rounded-lg font-semibold transition duration-200 shadow-md hover:scale-105 w-full mb-6">
+                            Checkout
+                        </button>
+                    </div>
+
+                    <!-- NEW: Section for Online Shop Input Area -->
+                    <div id="onlineShopSection" class="space-y-4 hidden">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Online Shop</h3>
+                        
+                        <div class="mb-4">
+                            <label for="marketplace-name" class="block text-sm font-medium text-gray-700 mb-2">Nama Marketplace:</label>
+                            <select id="marketplace-name" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-purple-500 focus:border-purple-500 sm:text-sm">
+                                <option value="">Pilih Marketplace</option>
+                                <option value="Shopee">Shopee</option>
+                                <option value="Lazada">Lazada</option>
+                                <option value="TikTok">TikTok</option>
+                                <option value="Tokopedia">Tokopedia</option>
+                                <option value="Other">Lainnya</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-4" id="other-marketplace-name-container" style="display: none;">
+                            <label for="other-marketplace-name" class="block text-sm font-medium text-gray-700 mb-2">Nama Marketplace Lainnya:</label>
+                            <input type="text" id="other-marketplace-name" placeholder="Masukkan nama marketplace"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="resi-number" class="block text-sm font-medium text-gray-700 mb-2">Nomor Resi:</label>
+                            <input type="text" id="resi-number" placeholder="Masukkan nomor resi"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="online-shop-price" class="block text-sm font-medium text-gray-700 mb-2">Harga Jual (Wajib) :</label>
+                            <input type="number" id="online-shop-price" placeholder="Masukkan harga jual" value="0" min="0"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200">
+                        </div>
+                        
+                        <div class="mb-6">
+                            <label for="online-shop-quantity" class="block text-sm font-medium text-gray-700 mb-2">Jumlah :</label>
+                            <input type="number" id="online-shop-quantity" value="1" min="1"
+                                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-200">
+                        </div>
+
+                        <button id="add-to-cart-btn-online-shop" class="bg-purple-600 hover:bg-purple-700 text-white px-5 py-2 rounded-lg font-semibold transition duration-200 shadow-md hover:scale-105 w-full mb-6">
+                            Proses Online Shop
+                        </button>
+                    </div>
+
+                    <!-- NEW: Section for QR/Barcode Scanner Input Area -->
+                    <div id="scannerSection" class="space-y-4 hidden">
+                        <h3 class="text-xl font-semibold text-gray-700 mb-4">Scan QR/Barcode Produk</h3>
+                        <div id="reader" class="w-full h-64 overflow-hidden rounded-md border-2 border-gray-300 dark:border-gray-600 mb-4"></div>
+                        <p class="text-center text-sm text-gray-600 dark:text-gray-400 mb-2">Arahkan kamera ke QR/Barcode produk.</p>
+                        <div id="scanner-result" class="text-center text-green-600 font-semibold mb-4"></div>
+                        <div class="flex space-x-2 w-full justify-center">
+                            <button id="startScannerBtn" class="p-2 px-4 rounded-md bg-green-500 text-white hover:bg-green-600 transition duration-150 disabled:opacity-50 disabled:cursor-not-allowed">Mulai Scan</button>
+                            <button id="stopScannerBtn" class="p-2 px-4 rounded-md bg-red-500 text-white hover:bg-red-600 transition duration-150 disabled:opacity-50 disabled:cursor-not-allowed" disabled>Berhenti Scan</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Shopping Cart / Transaction Summary -->
+                <div class="shopping-cart-panel space-y-6">
+                    <!-- Modified Shopping Cart Header -->
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-2xl font-semibold text-gray-800 flex items-center gap-2">
+                            <i class="fas fa-shopping-cart text-gray-600"></i>
+                            <span>Keranjang</span>
+                        </h2>
+                        <!-- Removed "Kembali:" text -->
+                        <div class="flex items-center space-x-2">
+                            <!-- Increased font size for changeAmountHeader -->
+                            <span id="changeAmountHeader" class="text-3xl font-bold text-green-600">Rp 0</span> 
+                        </div>
+                    </div>
+                    
+                    <!-- Item List -->
+                    <div id="itemList" class="item-list max-h-96 overflow-y-auto pr-2 bg-gray-50 p-4 rounded-md border border-gray-200">
+                        <!-- Selected items will be added here dynamically by JavaScript -->
+                        <p id="noItemsMessage" class="text-gray-500 text-center py-4">Tidak ada item dalam daftar.</p>
+                    </div>
+                    
+                    <!-- Summary Totals Section -->
+                    <div class="space-y-4 border-t pt-6 border-gray-200">
+                        <div class="flex justify-between items-center">
+                            <label for="totalAmount" class="block text-sm font-medium text-gray-700"></label> <!-- Removed "Subtotal :" -->
+                            <!-- Increased width and font size for totalAmount input -->
+                            <input type="text" id="totalAmount" readonly value="Rp 0"
+                                   class="w-full text-right px-3 py-4 border border-gray-300 rounded-md shadow-sm bg-gray-50 font-bold text-xl sm:text-2xl text-gray-800">
+                        </div>
+
+                        <!-- New Discount Input Field -->
+                        <div class="form-group">
+                            <label for="discountAmount" class="block text-sm font-medium text-gray-700 mb-1">Diskon (Rp)</label>
+                            <input type="number" id="discountAmount" value="0" min="0"
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-lg sm:text-sm bg-red-600 text-white font-bold italic">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="paymentAmount" class="block text-sm font-medium text-gray-700 mb-1">CASH PAYMENT</label>
+                            <!-- Increased width and font size for paymentAmount input -->
+                            <input type="number" id="paymentAmount" value="0"
+                                   class="mt-1 block w-full px-3 py-4 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-xl sm:text-2xl bg-green-600 text-white font-bold italic">
+                        </div>
+
+                        <!-- Nominal Quick Pay Buttons (NEW) -->
+                        <div class="flex flex-wrap gap-2 mb-4" id="nominal-buttons-container">
+                            <button class="nominal-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-3 rounded-md shadow-sm transition duration-200" data-nominal="50000">Rp 50.000</button>
+                            <button class="nominal-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-3 rounded-md shadow-sm transition duration-200" data-nominal="100000">Rp 100.000</button>
+                            <button class="nominal-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-3 rounded-md shadow-sm transition duration-200" data-nominal="150000">Rp 150.000</button>
+                            <button class="nominal-btn bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-3 rounded-md shadow-sm transition duration-200" data-nominal="200000">Rp 200.000</button>
+                        </div>
+
+                        <!-- Payment Method Dropdown (NEW) -->
+                        <div class="form-group">
+                            <label for="paymentMethod" class="block text-sm font-medium text-gray-700 mb-1">Metode Pembayaran:</label>
+                            <select id="paymentMethod" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                <option value="Tunai">Tunai</option>
+                                <option value="QRIS">QRIS</option>
+                                <option value="Transfer Bank">Transfer Bank</option>
+                            </select>
+                        </div>
+                        
+                        <!-- Original changeAmount input removed -->
+                    </div>
+                    
+                    <!-- Action Buttons -->
+                    <div class="flex gap-4 mt-6">
+                        <button id="newTransaction"
+                                class="flex-1 bg-gray-500 hover:bg-gray-600 text-white font-semibold py-3 px-4 rounded-md shadow-lg transition duration-300 ease-in-out">
+                            Transaksi Baru
+                        </button>
+                        <button id="printReceipt"
+                                class="flex-1 bg-green-700 hover:bg-green-800 text-white font-semibold py-3 px-4 rounded-md shadow-lg transition duration-300 ease-in-out">
+                            Cetak Struk & Proses
+                        </button>
+                        <button id="processOnlyPayment"
+                                class="flex-1 bg-blue-700 hover:bg-blue-800 text-white font-semibold py-3 px-4 rounded-md shadow-lg transition duration-300 ease-in-out">
+                            Proses Pembayaran
+                        </button>
+                    </div>
+                    
+                    <!-- Status Message -->
+                    <p id="status" class="mt-4 p-3 text-center rounded-md text-sm"></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Audio element for scan success sound -->
+    <audio id="scanSuccessSound" src="sound-effek/beep.mp3" preload="auto"></audio>
+    <!-- Audio element for transaction success sound -->
+    <audio id="transactionSuccessSound" src="sound-effek/kasir.mp3" preload="auto"></audio>
+
+    <!-- Price Calculator Modal (NEW) -->
+    <div id="price-calculator-modal" class="modal-overlay hidden">
+        <div class="modal-content max-w-lg">
+            <button class="modal-close-button" id="close-price-calculator-modal">&times;</button>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Kalkulator Harga Jual</h2>
+            
+            <div class="space-y-4">
+                <div class="form-group">
+                    <label for="price-calc-product-code" class="block text-sm font-medium text-gray-700 mb-1">Kode Barang (Opsional):</label>
+                    <div class="flex items-center gap-2">
+                        <input type="text" id="price-calc-product-code" placeholder="Misal: KODE001"
+                               class="flex-1 mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                        <button id="copy-product-code-btn" class="p-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700" title="Salin Kode Barang">
+                            <i class="fas fa-copy text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="price-calc-product-name" class="block text-sm font-medium text-gray-700 mb-1">Nama Barang (Opsional):</label>
+                    <input type="text" id="price-calc-product-name" placeholder="Nama produk"
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                </div>
+                <div class="form-group">
+                    <label for="price-calc-modal" class="block text-sm font-medium text-gray-700 mb-1">Modal (Rp):</label>
+                    <input type="number" id="price-calc-modal" value="0" min="0" required
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                </div>
+                <div class="form-group">
+                    <label for="price-calc-margin-percent" class="block text-sm font-medium text-gray-700 mb-1">Margin (%):</label>
+                    <input type="number" id="price-calc-margin-percent" value="0" min="0" required
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                </div>
+                <div class="form-group">
+                    <label for="price-calc-tax-percent" class="block text-sm font-medium text-gray-700 mb-1">Pajak (%):</label>
+                    <input type="number" id="price-calc-tax-percent" value="0" min="0" required
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                </div>
+                <div class="form-group">
+                    <label for="price-calc-discount-percent" class="block text-sm font-medium text-gray-700 mb-1">Discount (%):</label>
+                    <input type="number" id="price-calc-discount-percent" value="0" min="0" required
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                </div>
+                
+                <button id="calculate-price-btn" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">Hitung Harga Jual</button>
+                
+                <div class="form-group mt-6">
+                    <label for="price-calc-selling-price" class="block text-sm font-medium text-gray-700 mb-1">Harga Jual (Rp):</label>
+                    <div class="flex items-center gap-2">
+                        <input type="text" id="price-calc-selling-price" value="Rp 0" readonly disabled
+                               class="flex-1 mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed text-gray-800 sm:text-sm font-bold">
+                        <button id="copy-selling-price-btn" class="p-2 rounded-md bg-gray-200 hover:bg-gray-300 text-gray-700" title="Salin Harga Jual">
+                            <i class="fas fa-copy text-sm"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="price-calc-profit" class="block text-sm font-medium text-gray-700 mb-1">Keuntungan/Laba (Rp):</label>
+                    <input type="text" id="price-calc-profit" value="Rp 0" readonly disabled
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed text-gray-800 sm:text-sm font-bold">
+                </div>
+                <p id="price-calc-status-message" class="mt-3 p-2 text-center rounded-md text-sm hidden"></p>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Printer Settings Modal (New) -->
+    <div id="printer-settings-modal" class="modal-overlay hidden">
+        <div class="modal-content max-w-lg">
+            <button class="modal-close-button" id="close-printer-settings-modal">&times;</button>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Pengaturan Printer Bluetooth</h2>
+            
+            <div class="space-y-4">
+                <p id="printer-status" class="text-center text-gray-600">Status: Silahkan sambungkan printer</p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <button id="connect-printer-btn" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-lg font-semibold transition duration-200 shadow-md">
+                        <i class="fas fa-bluetooth-b mr-2"></i>Hubungkan Printer
+                    </button>
+                    <button id="disconnect-printer-btn" class="bg-red-500 hover:bg-red-600 text-white px-5 py-2 rounded-lg font-semibold transition duration-200 shadow-md" disabled>
+                        <i class="fas fa-unlink mr-2"></i>Putuskan Printer
+                    </button>
+                </div>
+                <button id="test-print-btn" class="w-full bg-green-600 hover:bg-green-700 text-white px-5 py-2 rounded-lg font-semibold transition duration-200 shadow-md" disabled>
+                    <i class="fas fa-print mr-2"></i>Test Cetak
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Store Products Modal -->
+    <div id="store-products-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-button" id="close-store-products-modal">&times;</button>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Produk Toko</h2>
+            
+            <!-- Search input for products -->
+            <div class="mb-4">
+                <input type="text" id="search-store-products-input" placeholder="Cari produk berdasarkan ID atau Nama..."
+                       class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200">
+            </div>
+
+            <!-- Table to display products -->
+            <div id="store-products-table-container" class="overflow-x-auto mb-4">
+                <table class="min-w-full bg-white border border-gray-200 rounded-md">
+                    <thead>
+                        <tr class="bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th class="py-2 px-4 border-b">ID Produk</th>
+                            <th class="py-2 px-4 border-b">Nama Produk</th>
+                            <th class="py-2 px-4 border-b text-right">Harga</th>
+                            <th class="py-2 px-4 border-b text-right">Stok</th>
+                            <th class="py-2 px-4 border-b text-center">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="store-products-table-body" class="text-gray-700 text-sm divide-y divide-gray-200">
+                        <!-- Products will be rendered here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Edit Product Form (Hidden by default) -->
+            <div id="edit-product-form" class="hidden mt-6 p-4 border border-blue-200 rounded-md bg-blue-50">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Edit Produk</h3>
+                
+                <div class="mb-3">
+                    <label for="edit-product-id-input" class="block text-sm font-medium text-gray-700">Kode Barang:</label>
+                    <input type="text" id="edit-product-id-input" readonly disabled
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed text-gray-800">
+                </div>
+                <div class="mb-3">
+                    <label for="edit-product-name-input" class="block text-sm font-medium text-gray-700">Nama Barang:</label>
+                    <input type="text" id="edit-product-name-input"
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div class="mb-3">
+                    <label for="edit-product-cost-input" class="block text-sm font-medium text-gray-700">Modal:</label>
+                    <input type="number" id="edit-product-cost-input" min="0"
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div class="mb-3">
+                    <label for="edit-product-price-input" class="block text-sm font-medium text-gray-700">Harga Jual :</label>
+                    <input type="number" id="edit-product-price-input" min="0"
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div class="mb-4">
+                    <label for="edit-product-stock-input" class="block text-sm font-medium text-gray-700">Stok:</label>
+                    <input type="number" id="edit-product-stock-input" min="0"
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+                </div>
+                <div class="flex gap-3">
+                    <button id="save-product-edit-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">Simpan Perubahan</button>
+                    <button id="cancel-product-edit-btn" class="bg-gray-400 hover:bg-gray-500 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">Batal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Add New Product Modal (New) -->
+    <div id="add-product-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-button" id="close-add-product-modal">&times;</button>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Tambah Produk Baru</h2>
+            
+            <div class="space-y-4">
+                <div class="form-group">
+                    <label for="add-product-code" class="block text-sm font-medium text-gray-700 mb-1">Kode Barang (Wajib):</label>
+                    <input type="text" id="add-product-code" placeholder="Misal: PROD009" required
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                </div>
+                <div class="form-group">
+                    <label for="add-product-name" class="block text-sm font-medium text-gray-700 mb-1">Nama Barang (Wajib):</label>
+                    <input type="text" id="add-product-name" placeholder="Nama produk baru" required
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                </div>
+                <div class="form-group">
+                    <label for="add-product-cost" class="block text-sm font-medium text-gray-700 mb-1">Modal (Wajib):</label>
+                    <input type="number" id="add-product-cost" value="0" min="0" required
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                </div>
+                <div class="form-group">
+                    <label for="add-product-price" class="block text-sm font-medium text-gray-700 mb-1">Harga Jual (Wajib) :</label>
+                    <input type="number" id="add-product-price" value="0" min="0" required
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                </div>
+                <div class="form-group">
+                    <label for="add-product-stock" class="block text-sm font-medium text-gray-700 mb-1">Stok (Wajib):</label>
+                    <input type="number" id="add-product-stock" value="0" min="0" required
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                </div>
+                <div class="form-group">
+                    <label for="add-product-profit" class="block text-sm font-medium text-gray-700 mb-1">Laba:</label>
+                    <input type="text" id="add-product-profit" value="Rp 0" readonly disabled
+                           class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm bg-gray-100 cursor-not-allowed text-gray-800 sm:text-sm">
+                </div>
+                <div class="flex gap-3">
+                    <button id="save-new-product-btn" class="flex-1 bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">Tambah Produk</button>
+                    <button id="cancel-add-product-btn" class="flex-1 bg-gray-400 hover:bg-gray-500 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">Batal</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Expenses Modal (New) -->
+    <div id="expenses-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-button" id="close-expenses-modal">&times;</button>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Pengeluaran</h2>
+            
+            <!-- Form Tambah Pengeluaran -->
+            <div class="mb-6 p-4 border border-gray-200 rounded-md bg-white shadow-sm">
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">Tambah Pengeluaran Baru</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label for="expense-date" class="block text-sm font-medium text-gray-700 mb-1">Tanggal:</label>
+                        <input type="date" id="expense-date" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="expense-description" class="block text-sm font-medium text-gray-700 mb-1">Deskripsi:</label>
+                        <input type="text" id="expense-description" placeholder="Misal: Biaya sewa toko" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div class="md:col-span-2">
+                        <label for="expense-amount" class="block text-sm font-medium text-gray-700 mb-1">Jumlah (Rp):</label>
+                        <input type="number" id="expense-amount" value="0" min="0" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                </div>
+                <button id="add-expense-btn" class="mt-4 w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">Tambah Pengeluaran</button>
+                <p id="expense-status-message" class="mt-3 p-2 text-center rounded-md text-sm hidden"></p>
+            </div>
+
+            <!-- Filter dan Pencarian Pengeluaran -->
+            <div class="mb-4 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div class="flex flex-col sm:flex-row items-center gap-4 flex-wrap">
+                    <input type="text" id="expense-search-input" placeholder="Cari berdasarkan deskripsi..."
+                           class="flex-grow px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-green-500 transition duration-200">
+                    <label for="expense-filter-start-date" class="text-gray-700 text-sm font-medium">Dari:</label>
+                    <input type="date" id="expense-filter-start-date"
+                        class="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                    <label for="expense-filter-end-date" class="text-gray-700 text-sm font-medium">Sampai:</label>
+                    <input type="date" id="expense-filter-end-date"
+                        class="px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                    <button id="apply-expense-filter-btn"
+                            class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold transition duration-200 shadow-md hover:scale-105">
+                        Filter
+                    </button>
+                    <button id="clear-expense-filter-btn"
+                            class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-lg font-semibold transition duration-200 shadow-md hover:scale-105">
+                        Bersihkan
+                    </button>
+                </div>
+                <!-- NEW: Export Expenses to XLS Button -->
+                <div class="flex-shrink-0 mt-4 sm:mt-0">
+                    <button id="export-expenses-xls-btn"
+                            class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-semibold transition duration-200 shadow-md hover:scale-105 w-full sm:w-auto">
+                        <i class="fas fa-file-excel mr-2"></i>Export ke XLS
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Total Pengeluaran (hasil filter/pencarian) -->
+            <div class="mb-4 text-right">
+                <p class="text-lg font-semibold text-gray-800">Total Pengeluaran: <span id="total-expenses-display-modal">Rp 0</span></p>
+            </div>
+
+            <!-- Daftar Pengeluaran -->
+            <h4 class="text-lg font-semibold text-gray-800 mb-3 mt-6">Daftar Pengeluaran</h4>
+            <div class="overflow-x-auto" style="max-height: 300px;">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Tanggal</th>
+                            <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Deskripsi</th>
+                            <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Jumlah</th>
+                            <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="expenses-list-body" class="bg-white divide-y divide-gray-200">
+                        <tr><td colspan="4" class="text-center py-4 text-gray-500">Memuat pengeluaran...</td></tr>
+                    </tbody>
+                </table>
+                <div id="empty-expenses-message" class="text-center text-gray-500 mt-4 hidden">Tidak ada pengeluaran.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Financial Report Modal -->
+    <div id="financial-report-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button id="close-financial-report-modal-btn" class="modal-close-button">&times;</button>
+            <h3 class="text-2xl font-semibold text-gray-800 mb-4">Laporan Keuangan</h3>
+
+            <!-- Filter Tanggal -->
+            <div class="mb-6 p-4 border border-gray-200 rounded-lg bg-white shadow-sm flex flex-col sm:flex-row items-center gap-4">
+                <label for="report-start-date" class="text-gray-700 text-sm font-medium">Dari Tanggal:</label>
+                <input type="date" id="report-start-date"
+                    class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                <label for="report-end-date" class="text-gray-700 text-sm font-medium">Sampai Tanggal:</label>
+                <input type="date" id="report-end-date"
+                    class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                <button id="apply-financial-filter-btn"
+                        class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold transition duration-200 shadow-md hover:scale-105">
+                    Terapkan Filter
+                </button>
+                <button id="clear-financial-filter-btn"
+                        class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-lg font-semibold transition duration-200 shadow-md hover:scale-105">
+                    Bersihkan Filter
+                </button>
+                <!-- NEW: Export to XLS Button -->
+                <button id="export-financial-report-xls-btn"
+                        class="bg-purple-600 hover:bg-purple-700 text-white px-4 py-2 rounded-lg font-semibold transition duration-200 shadow-md hover:scale-105">
+                    <i class="fas fa-file-excel mr-2"></i>Export ke XLS
+                </button>
+            </div>
+
+            <!-- Ringkasan Keuangan -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <p class="text-sm text-gray-500">Pendapatan</p>
+                    <p id="total-revenue-display" class="text-2xl font-bold text-green-600">Rp 0</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <p class="text-sm text-gray-500">Pengeluaran</p>
+                    <p id="total-expenses-display" class="text-2xl font-bold text-red-600">Rp 0</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <p class="text-sm text-gray-500">Laba Kotor</p>
+                    <p id="gross-profit-display" class="text-2xl font-bold text-blue-600">Rp 0</p>
+                </div>
+                <div class="bg-white p-4 rounded-lg shadow-md text-center">
+                    <p class="text-sm text-gray-500">Laba Bersih</p>
+                    <p id="net-profit-display" class="text-2xl font-bold text-purple-600">Rp 0</p>
+                </div>
+            </div>
+
+            <!-- Area Grafik -->
+            <div class="bg-white p-4 rounded-lg shadow-md">
+                <canvas id="financial-chart"></canvas>
+            </div>
+
+            <div id="financial-report-message-box" class="mt-4 p-3 bg-yellow-100 border border-yellow-200 text-yellow-800 rounded-md hidden"></div>
+        </div>
+    </div>
+
+    <!-- Transaction History Modal (New) -->
+    <div id="transaction-history-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-button" id="close-transaction-history-modal">&times;</button>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Riwayat Transaksi</h2>
+
+            <!-- Filter Tanggal untuk Riwayat Transaksi -->
+            <div id="history-filter-controls" class="mb-6 p-4 border border-gray-200 rounded-lg bg-white shadow-sm flex flex-col sm:flex-row items-center gap-4">
+                <label for="history-start-date" class="text-gray-700 text-sm font-medium">Dari Tanggal:</label>
+                <input type="date" id="history-start-date"
+                    class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                <label for="history-end-date" class="block text-gray-700 text-sm font-medium">Sampai Tanggal:</label>
+                <input type="date" id="history-end-date"
+                    class="flex-grow px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                <button id="apply-history-filter-btn"
+                        class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg font-semibold transition duration-300 ease-in-out">
+                    Terapkan Filter
+                </button>
+                <button id="clear-history-filter-btn"
+                        class="bg-gray-400 hover:bg-gray-500 text-white px-4 py-2 rounded-lg font-semibold transition duration-300 ease-in-out">
+                    Bersihkan Filter
+                </button>
+            </div>
+
+            <!-- Total Transaksi (hasil filter tanggal) -->
+            <div class="mb-4 text-right">
+                <p class="text-lg font-semibold text-gray-800">Total Transaksi: <span id="total-transactions-amount">Rp 0</span></p>
+            </div>
+
+            <!-- Transaction List Table -->
+            <div class="overflow-x-auto mb-4">
+                <table class="min-w-full bg-white border border-gray-200 rounded-md">
+                    <thead>
+                        <tr class="bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                            <th class="py-2 px-4 border-b">ID Transaksi</th>
+                            <th class="py-2 px-4 border-b">Tanggal</th>
+                            <th class="py-2 px-4 border-b">Kasir</th>
+                            <th class="py-2 px-4 border-b text-right">Total</th>
+                            <th class="py-2 px-4 border-b text-center">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody id="transaction-history-table-body" class="text-gray-700 text-sm divide-y divide-gray-200">
+                        <!-- Transaction rows will be inserted here by JavaScript -->
+                    </tbody>
+                </table>
+            </div>
+            <p id="transaction-history-message-box" class="mt-4 p-3 bg-yellow-100 border border-yellow-200 text-yellow-800 rounded-md hidden text-center"></p>
+
+            <!-- Transaction Detail Section (Hidden by default) -->
+            <div id="transaction-detail-section" class="hidden mt-6 p-4 border border-blue-200 rounded-md bg-blue-50">
+                <h3 class="text-xl font-semibold text-gray-800 mb-4">Detail Transaksi <span id="detail-transaction-id"></span></h3>
+                <p><strong>Tanggal:</strong> <span id="detail-transaction-date"></span></p>
+                <p><strong>Kasir:</strong> <span id="detail-cashier"></span></p>
+                <p><strong>Subtotal:</strong> <span id="detail-subtotal"></span></p>
+                <p><strong>Diskon:</strong> <span id="detail-discount"></span></p>
+                <p><strong>Total Pembayaran:</strong> <span id="detail-total-amount"></span></p>
+                <p><strong>Jumlah Dibayar:</strong> <span id="detail-payment-amount"></span></p>
+                <p><strong>Kembali:</strong> <span id="detail-change-amount"></span></p>
+
+                <h4 class="text-lg font-semibold text-gray-700 mt-4 mb-2">Item Transaksi:</h4>
+                <div class="overflow-x-auto">
+                    <table class="min-w-full bg-white border border-gray-200 rounded-md">
+                        <thead>
+                            <tr class="bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
+                                <th class="py-2 px-4 border-b">Produk</th>
+                                <th class="py-2 px-4 border-b text-right">Qty</th>
+                                <th class="py-2 px-4 border-b text-right">Harga Satuan</th>
+                                <th class="py-2 px-4 border-b text-right">Total Item</th>
+                            </tr>
+                        </thead>
+                        <tbody id="detail-item-list" class="text-gray-700 text-sm divide-y divide-gray-200">
+                            <!-- Items will be loaded here -->
+                        </tbody>
+                    </table>
+                </div>
+                <div class="flex justify-end gap-3 mt-4">
+                    <!-- Added a data-transaction-id attribute for the reprint button -->
+                    <button id="reprint-receipt-btn" class="bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out" data-transaction-id="">Cetak Ulang Struk</button>
+                    <button id="close-transaction-detail-btn" class="bg-gray-500 hover:bg-gray-600 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">Tutup Detail</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Confirmation Modal -->
+    <div id="confirmation-modal" class="modal-overlay hidden">
+        <div class="modal-content max-w-sm">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Konfirmasi</h3>
+            <p id="confirmation-message" class="mb-6 text-gray-700"></p>
+            <div class="flex justify-end gap-3">
+                <button id="confirm-cancel-btn" class="bg-gray-400 hover:bg-gray-500 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">Batal</button>
+                <button id="confirm-ok-btn" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">Oke</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reset Data Confirmation Modal (NEW) -->
+    <div id="reset-data-modal" class="modal-overlay hidden">
+        <div class="modal-content max-w-sm">
+            <h3 class="text-xl font-semibold text-gray-800 mb-4">Reset Semua Data Aplikasi</h3>
+            <p class="mb-4 text-gray-700">Tindakan ini akan menghapus semua data aplikasi (produk, transaksi, pengeluaran, pengguna). Tindakan ini TIDAK DAPAT DIBATALKAN.</p>
+            <p class="mb-4 text-red-600 font-semibold">Untuk melanjutkan, masukkan kata sandi berikut: <code class="bg-gray-200 px-2 py-1 rounded">alfajrihanif24@gmail.com</code></p>
+            <div class="mb-6">
+                <label for="reset-password-input" class="block text-gray-700 text-sm font-medium mb-2 text-left">Kata Sandi:</label>
+                <input type="password" id="reset-password-input" placeholder="Masukkan kata sandi untuk konfirmasi"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-red-500 transition duration-200">
+            </div>
+            <p id="reset-data-message" class="mt-4 p-3 bg-red-100 border border-red-200 text-red-800 rounded-md hidden"></p>
+            <div class="flex justify-end gap-3">
+                <button id="reset-data-cancel-btn" class="bg-gray-400 hover:bg-gray-500 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">Batal</button>
+                <button id="reset-data-confirm-btn" class="bg-red-600 hover:bg-red-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">Reset Data</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- User Settings Modal (New) -->
+    <div id="user-settings-modal" class="modal-overlay hidden">
+        <div class="modal-content">
+            <button class="modal-close-button" id="close-user-settings-modal">&times;</button>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Pengaturan Pengguna</h2>
+
+            <!-- Login Section within User Settings Modal -->
+            <!-- This is distinct from the main app login screen -->
+            <div id="user-settings-login-section" class="mb-6 p-4 border border-gray-200 rounded-md bg-white shadow-sm">
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">Login Pengguna Saat Ini</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label for="user-settings-login-username" class="block text-sm font-medium text-gray-700 mb-1">Username:</label>
+                        <input type="text" id="user-settings-login-username" placeholder="Masukkan username"
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <div>
+                        <label for="user-settings-login-password" class="block text-sm font-medium text-gray-700 mb-1">Password:</label>
+                        <input type="password" id="user-settings-login-password" placeholder="Masukkan password"
+                               class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                    </div>
+                    <button id="user-settings-login-btn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">Login</button>
+                    <p id="user-settings-login-status-message" class="hidden"></p>
+                </div>
+            </div>
+
+            <!-- User Management Section (Admin Only) -->
+            <div id="user-management-section" class="mb-6 p-4 border border-gray-200 rounded-md bg-white shadow-sm hidden">
+                <h3 class="text-xl font-semibold text-gray-700 mb-3">Manajemen Pengguna (Admin)</h3>
+                
+                <!-- Add New User Form -->
+                <div class="mb-4">
+                    <h4 class="text-lg font-semibold text-gray-700 mb-2">Tambah Pengguna Baru</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label for="new-user-username" class="block text-sm font-medium text-gray-700 mb-1">Username:</label>
+                            <input type="text" id="new-user-username" placeholder="Username baru"
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                        </div>
+                        <div>
+                            <label for="new-user-password" class="block text-sm font-medium text-gray-700 mb-1">Password:</label>
+                            <input type="password" id="new-user-password" placeholder="Password baru"
+                                   class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                        </div>
+                        <div class="md:col-span-2">
+                            <label for="new-user-role" class="block text-sm font-medium text-gray-700 mb-1">Role:</label>
+                            <select id="new-user-role" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                                <option value="cashier">Kasir</option>
+                                <option value="admin">Admin</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button id="add-user-btn" class="mt-4 w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">Tambah Pengguna</button>
+                    <p id="add-user-status-message" class="mt-3 p-2 text-center rounded-md text-sm hidden"></p>
+                </div>
+
+                <!-- User List -->
+                <h4 class="text-lg font-semibold text-gray-700 mb-2 mt-6">Daftar Pengguna</h4>
+                <div class="overflow-x-auto" style="max-height: 200px;">
+                    <table class="min-w-full divide-y divide-gray-200">
+                        <thead class="bg-gray-50">
+                            <tr>
+                                <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Username</th>
+                                <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Role</th>
+                                <th scope="col" class="px-6 py-3 text-right text-xs font-medium text-gray-500 uppercase tracking-wider">Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="user-list-body" class="bg-white divide-y divide-gray-200">
+                            <!-- User rows will be inserted here by JavaScript -->
+                            <tr><td colspan="3" class="text-center py-4 text-gray-500">Memuat pengguna...</td></tr>
+                        </tbody>
+                    </table>
+                    <div id="empty-user-message" class="text-center text-gray-500 mt-4 hidden">Tidak ada pengguna.</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- NEW: Modal untuk Cetak Laporan Harian/Per Tanggal -->
+    <div id="daily-report-print-modal" class="modal-overlay hidden">
+        <div class="modal-content max-w-lg">
+            <button class="modal-close-button" id="close-daily-report-print-modal">&times;</button>
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Cetak Laporan Transaksi</h2>
+            
+            <div class="space-y-4">
+                <div class="form-group">
+                    <label for="report-print-date" class="block text-sm font-medium text-gray-700 mb-1">Pilih Tanggal Laporan:</label>
+                    <input type="date" id="report-print-date" class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500 sm:text-sm">
+                </div>
+                <p id="daily-report-print-status-message" class="mt-3 p-2 text-center rounded-md text-sm hidden"></p>
+                <button id="print-daily-report-btn" class="w-full bg-green-600 hover:bg-green-700 text-white font-semibold py-2 px-4 rounded-md shadow-md transition duration-300 ease-in-out">
+                    <i class="fas fa-print mr-2"></i>Cetak Laporan
+                </button>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bluetooth Print JS Library -->
+    <script src="https://cdn.jsdelivr.net/npm/bluetooth-print-js@1.0/index.min.js"></script>
+    <script src="script.js"></script>
+    <script>
+        // Register service worker for PWA capabilities
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker terdaftar dengan scope:', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('Pendaftaran Service Worker gagal:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
